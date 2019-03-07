@@ -8,15 +8,16 @@
     <base href="../">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/fonts/flaticon/flaticon.css">
   </head>
-  <body>
+  <body class="text-right">
     <header>
-      <nav class="navbar navbar-expand navbar-light bg-light">
+      <nav class="navbar p-0 navbar-expand navbar-light bg-light shadow-sm">
         <div class="container">
           <a href="#">
-            <img src="img/logo/logo v1.png" alt="" height="40px">
+            <img src="img/logo/logo v1.png" alt="" height="50px">
           </a>
           <ul class="nav navbar-nav navbar-right">
               <li class="nav-item active">
@@ -30,18 +31,68 @@
       </nav>
     </header>
     <main>
-      <div class="container">
-          <div class="jumbotron jumbotron-fluid">
-            <div class="container">
-              <h1 class="display-3">Jumbo heading</h1>
-              <p class="lead">Jumbo helper text</p>
-              <hr class="my-2">
-              <p>More info</p>
-              <p class="lead">
-                <a class="btn btn-primary btn-lg" href="Jumbo action link" role="button">Jumbo action name</a>
-              </p> 
-            </div>
+      <div class="container-fluid">
+        <div class="row blue-bar">
+        </div>
+      </div>
+      <div class="container shadow bg-white rounded" id="profile-container">
+        <div class="row" id="description-row">
+          <div class="col-md-2 col-sm-12">
+            <img src="img/project-pic.png" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="">
           </div>
+          <div class="col-md-10">
+            <h2 class="font-weight-bold mb-sm-3">پروژه طراحی سایت جاب‌اونجا</h2>
+            <div class="row">
+              <div class="col-sm-12 deadline">
+                <i class="flaticon-success ml-1"></i>
+                <span><span>زمان باقی‌مانده:</span> ۱۷ دقیقه و ۲۵ ثانیه</span>
+              </div>
+              <div class="col-sm-12 budget">
+                <i class="flaticon-money-bag ml-1"></i>
+                <span>بودجه: ۲۵۰۰ تومان</span>
+              </div>
+            </div>
+            <h5 class="font-weight-bold my-md-3">توضیحات</h5>
+            <p class="font-weight-light">
+              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. 
+              چاپگرها و متون بلکه روزنامه و مجله در ستون و سطر آنچنان که لازم است. 
+              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. 
+              چاپگرها و متون بلکه روزنامه و مجله در ستون و سطر آنچنان که لازم است.
+            </p>
+          </div>
+        </div>
+        <hr />
+        <div class="row" id="skill-row">
+          <div class="col-sm-12">
+            <h5 class="font-weight-bold">مهارت‌های لازم:</h5>
+            <div class="row skills">
+                <div class="col-sm-auto d-inline shadow-sm rounded bg-white skill">
+                  <span>HTML </span><span class="skill-point">5</span>
+                </div>
+                <div class="col-sm-auto d-inline shadow-sm rounded bg-white skill">
+                  CSS <span class="skill-point">3</span>
+                </div>
+                <div class="col-sm-auto d-inline shadow-sm rounded bg-white skill">
+                  Javascript <span class="skill-point">16</span>
+                </div>
+                <div class="col-sm-auto d-inline shadow-sm rounded bg-white skill">
+                  Typescript <span class="skill-point">2</span>
+                </div>
+              </div>
+          </div>
+        </div>
+        <div class="row" id="bid-row">
+          <div class="col-sm-12">
+            <h5>ثبت پیشنهاد:</h5>
+            <form class="form-inline">
+              <div class="form-group ml-sm-3 mb-2">
+                  <input type="number" class="form-control" id="bidAmount" placeholder="پیشنهاد خود را وارد کنید">
+                  <span id="bidAmountUnit">تومان</span>
+              </div>
+              <button type="submit" id="submitBidAmountBtn" class="btn mb-2">ارسال</button>
+            </form>
+          </div>
+        </div>
       </div>
     </main>
     <footer>

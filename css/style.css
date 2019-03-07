@@ -1,7 +1,87 @@
-* {
-  font-family: IRANSans;
+html body {
+  font-family: -apple-system, BlinkMacSystemFont, IRANSans, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-.navbar {
-  padding: 0;
+.blue-bar {
+  height: 100px;
+  background-color: #BBEFF1;
+}
+
+#profile-container {
+  margin-top: -50px;
+}
+
+#description-row {
+  padding: 30px;
+}
+
+#description-row p {
+  font-weight: 300;
+  text-indent: 3%;
+}
+
+#skill-row {
+  background-color: #F9F9F9;
+  padding: 30px 30px;
+  border-bottom: 1px solid rgb(211, 211, 211);
+}
+
+#skill-row h5 {
+  color: #1E8289;
+}
+
+hr {
+  border-top: 2px dashed rgb(79, 205, 209);
+  margin: 0 -15px;
+}
+
+.skills {
+  direction: ltr;
+}
+
+.skill {
+  margin: 5px 5px;
+  padding: 5px 8px;
+  font-weight: 300;
+  align-content: center;
+  vertical-align: middle;
+  line-height: 1.4;
+}
+
+.skill-point {
+  background-color: #BBEFF1;
+  color: #1E8289;
+  display: inline-block;
+  padding: 0 8px;
+  border-radius: 0.25rem;
+  text-align: center;
+}
+
+#bid-row {
+  padding: 30px 30px;
+
+}
+
+#bidAmount {
+  padding-left: 50px;
+  border: 2px solid rgb(31, 191, 208);
+  min-width: 300px;
+}
+
+#bidAmountUnit {
+  margin-right: -50px;
+  color: rgb(31, 191, 208);
+}
+
+#submitBidAmountBtn {
+  background-color: rgb(27, 174, 189);
+  color: white;
+}
+
+.deadline {
+  color: gray;
+}
+
+.budget {
+  color: #1E8289;
 }
