@@ -65,12 +65,14 @@ hr {
 #bidAmount {
   padding-left: 50px;
   border: 2px solid rgb(31, 191, 208);
-  min-width: 300px;
+  min-width: 250px;
 }
 
 #bidAmountUnit {
   margin-right: -50px;
   color: rgb(31, 191, 208);
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 #submitBidAmountBtn {
