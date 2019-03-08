@@ -17,7 +17,7 @@
       <nav class="navbar fixed-top p-0 navbar-expand navbar-light bg-white shadow-sm">
         <div class="container">
           <a href="#">
-            <img src="img/logo/logo v1.png" alt="" height="60px">
+            <img src="img/logo/logo v1.png" height="60px">
           </a>
           <ul class="nav navbar-nav navbar-right">
               <li class="nav-item active mt-auto mb-auto">
@@ -32,27 +32,21 @@
     </header>
     <main>
       <div class="container-fluid">
-        <div class="row blue-bar">
+        <div class="row blue-bar-wider">
         </div>
       </div>
-      <div class="container shadow bg-white rounded" id="project-container">
-        <div class="row" id="description-row">
-          <div class="col-md-3 col-xs-12 text-center">
-            <img src="img/project-pic.png" class="img-fluid rounded" alt="">
+      <div class="container" id="profile-container">
+        <div class="row mb-4" id="name-pic-row">
+          <div class="col-md-auto col-xs-12 text-center">
+            <img src="img/kiani.jpg" class="img-fluid profile-picture shadow-sm" alt="">
           </div>
           <div class="col-md-9">
-            <h2 class="font-weight-bold mb-3 mt-1">پروژه طراحی سایت جاب‌اونجا</h2>
-            <div class="row">
-              <div class="col-sm-12 deadline">
-                <i class="flaticon-success ml-1"></i>
-                <span><span>زمان باقی‌مانده:</span> ۱۷ دقیقه و ۲۵ ثانیه</span>
-              </div>
-              <div class="col-sm-12 budget">
-                <i class="flaticon-money-bag ml-1"></i>
-                <span>بودجه: ۲۵۰۰ تومان</span>
-              </div>
-            </div>
-            <h5 class="font-weight-bold my-md-3">توضیحات</h5>
+            <h2 class="font-weight-bold mt-1">محمدرضا کیانی</h2>
+            <h5 class="font-weight-lighter mb-md-3">اعلی حضرت</h5>
+          </div>
+        </div>
+        <div class="row" id="profile-description-row">
+          <div class="col-sm-12">
             <p class="font-weight-light">
               لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. 
               چاپگرها و متون بلکه روزنامه و مجله در ستون و سطر آنچنان که لازم است. 
@@ -61,10 +55,23 @@
             </p>
           </div>
         </div>
-        <hr />
-        <div class="row" id="skill-row">
+        <div class="row">
           <div class="col-sm-12">
-            <h5 class="font-weight-bold">مهارت‌های لازم:</h5>
+            <div class="row">
+              <div class="col-sm-auto my-auto pl-0 ml-2">
+                <h5 class="font-weight-bold">مهارت‌ها:</h5>
+              </div>
+              <div class="col-sm-auto d-inline shadow-sm rounded bg-white skill align-items-center">
+                <form class="form-inline">
+                  <div class="form-row ml-1">
+                    <select class="form-control" id="addSkillMenu">
+                      <option value="" disabled selected>-- انتخاب مهارت --</option>
+                    </select>
+                  </div>
+                  <button type="submit" id="submitBidAmountBtn" class="btn">افزودن مهارت</button>
+                </form>
+              </div>
+            </div>
             <div class="row skills">
                 <div class="col-xs-auto d-inline shadow-sm rounded bg-white skill">
                   <span>HTML </span><span class="skill-point">5</span>
@@ -76,16 +83,8 @@
                   Javascript <span class="skill-point">16</span>
                 </div>
                 <div class="col-xs-auto d-inline shadow-sm rounded bg-white skill">
-                  Typescript <span class="skill-point">2</span>
+                  Typescript <span class="skill-point skill-remove">-</span>
                 </div>
-              </div>
-          </div>
-        </div>
-        <div class="row" id="bid-row">
-          <div class="col-xs-auto col-sm-12">
-              <div class="col-xs-auto col-sm-12 text-success">
-                <i class="flaticon-correct-symbol ml-1"></i>
-                <span>شما قبلاً پیشنهاد خود را ثبت کرده‌اید</span>
               </div>
           </div>
         </div>
