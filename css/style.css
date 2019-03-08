@@ -1,10 +1,43 @@
-html body {
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin: 0;
+  margin-bottom: 170px;
+  height: 100%;
   font-family: -apple-system, BlinkMacSystemFont, IRANSans, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: rgb(246, 246, 246);
+}
+
+main {
+  margin-top: 60px;
+}
+
+header .nav {
+  height: 60px;
+}
+
+header ul {
+  padding-inline-start: 30px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(54, 54, 54);
+  height: 70px;
+  color: rgb(118, 118, 118);
+  text-shadow: 1px 1px 1px black;
 }
 
 .blue-bar {
   height: 100px;
   background-color: #BBEFF1;
+  -webkit-box-shadow: inset 0px -75px 18px -82px rgba(0,0,0,1);
+  -moz-box-shadow: inset 0px -75px 18px -82px rgba(0,0,0,1);
+  box-shadow: inset 0px -75px 18px -82px rgba(0,0,0,1);
 }
 
 #profile-container {
@@ -84,6 +117,14 @@ hr {
   color: gray;
 }
 
+.deadline-reached {
+  color: red;
+}
+
 .budget {
   color: #1E8289;
+}
+
+.winner {
+  color: green;
 }

@@ -1,6 +1,6 @@
 	/*
   	Flaticon icon font: Flaticon
-  	Creation date: 07/03/2019 17:26
+  	Creation date: 08/03/2019 10:29
   	*/
 
 @font-face {
@@ -31,3 +31,5 @@ font-style: normal;
 
 .flaticon-success:before { content: "\f100"; }
 .flaticon-money-bag:before { content: "\f101"; }
+.flaticon-correct-symbol:before { content: "\f102"; }
+.flaticon-danger:before { content: "\f103"; }
