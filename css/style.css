@@ -14,6 +14,19 @@ header {
   height: 60px;
 }
 
+#header-menu li {
+  margin-bottom: auto;
+  margin-top: auto;
+}
+
+#header-menu {
+  padding-inline-start: 30px;
+}
+
+#header-logo {
+  height: 60px;
+}
+
 footer {
   position: absolute;
   bottom: 0;
@@ -32,12 +45,13 @@ footer {
   box-shadow: inset 0px -75px 18px -82px rgba(0,0,0,1);
 }
 
-.blue-bar-wider {
+#blue-bar-wider {
   height: 150px;
-  background-color: #BBEFF1;
-  -webkit-box-shadow: inset 0px -75px 18px -82px rgba(0,0,0,1);
-  -moz-box-shadow: inset 0px -75px 18px -82px rgba(0,0,0,1);
-  box-shadow: inset 0px -75px 18px -82px rgba(0,0,0,1);
+}
+
+hr {
+  border-top: 2px dashed rgb(79, 205, 209);
+  margin: 0 -15px;
 }
 
 #project-container {
@@ -46,6 +60,23 @@ footer {
 
 #profile-container {
   z-index: 1000;
+}
+
+#profile-name {
+  margin-top: 15px;
+}
+
+#profile-name h2 {
+  color: rgb(70, 70, 70);
+}
+
+#profile-name h6 {
+  color: rgb(118, 118, 118);
+}
+
+#profile-description-row p {
+  color: rgb(70, 70, 70);
+  line-height: 1.7;
 }
 
 #description-row {
@@ -57,23 +88,19 @@ footer {
   text-indent: 3%;
 }
 
-#skill-row {
-  background-color: #F9F9F9;
-  padding: 30px 30px;
-  border-bottom: 1px solid rgb(211, 211, 211);
+.profile-picture {
+  z-index: 100;
+  margin-top: -95px;
+  width: 190px;
+  height: 190px;
+  border-radius: 22px;
+  border: 10px solid rgba(255, 255, 255, 0.8);
 }
 
-#skill-row h5 {
-  color: #1E8289;
-}
-
-hr {
-  border-top: 2px dashed rgb(79, 205, 209);
-  margin: 0 -15px;
-}
-
-.skills {
-  direction: ltr;
+#addSkillMenu {
+  min-width: 200px;
+  background-color: rgb(246, 246, 246);
+  border: 1px solid #eeeeee;
 }
 
 .compact-card {
@@ -87,6 +114,46 @@ hr {
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
   border-radius: 0.25rem;
   background-color: #fff;
+}
+
+#skill-row {
+  background-color: #F9F9F9;
+  padding: 30px 30px;
+  border-bottom: 1px solid rgb(211, 211, 211);
+}
+
+#skill-row h5 {
+  color: #1E8289;
+}
+
+.skill-endorsable:hover .skill-point-text {
+  display: none;
+}
+
+.skill-endorsable:hover .skill-point:after {
+  content: '+';
+}
+
+.skill-endorsable:hover .skill-point {
+  background-color: rgb(27, 182, 31);
+  color: white;
+}
+
+.skill-removable:hover .skill-point-text {
+  display: none;
+}
+
+.skill-removable:hover .skill-point:after {
+  content: '-';
+}
+
+.skill-removable:hover .skill-point {
+  background-color: red;
+  color: white;
+}
+
+.skills {
+  direction: ltr;
 }
 
 .skill-add-dropdown {
@@ -151,27 +218,12 @@ hr {
   color: green;
 }
 
-.profile-picture {
-  z-index: 100;
-  margin-top: -95px;
-  width: 190px;
-  height: 190px;
-  border-radius: 22px;
-  border: 10px solid rgba(255, 255, 255, 0.8);
-}
-
-#addSkillMenu {
-  min-width: 200px;
-  background-color: rgb(246, 246, 246);
-  border: 1px solid #eeeeee;
-}
-
 .register-form-col {
   margin-top: -70px;
   padding: 10px 15px;
 }
 
-#blue-thing {
+.blue-decoration {
   width: 120px;
   height: 30px;
   position: absolute;
@@ -186,15 +238,10 @@ hr {
   margin-left: -95px;
 }
 
-#blue-thing-wider {
+#blue-decoration-wider {
   width: 120px;
   height: 30px;
-  position: absolute;
-  top: 0;
-  left: 0;
   background-color: rgb(130, 218, 222);
-  -webkit-clip-path: polygon(20% 0%, 100% 0, 100% 100%, 0 100%);
-  clip-path: polygon(20% 0%, 100% 0, 100% 100%, 0 100%);
   z-index: 101;
   opacity: 0.8;
   margin-top: -30px;
@@ -209,58 +256,4 @@ hr {
   width: 200px;
   height: 200px;
   border: 1px solid rgba(192, 191, 191, 0.2);
-}
-
-#header-menu li {
-  margin-bottom: auto;
-  margin-top: auto;
-}
-
-#header-menu {
-  padding-inline-start: 30px;
-}
-
-#header-logo {
-  height: 60px;
-}
-
-.skill-endorsable:hover .skill-point-text {
-  display: none;
-}
-.skill-endorsable:hover .skill-point:after {
-  content: '+';
-}
-
-.skill-endorsable:hover .skill-point {
-  background-color: rgb(27, 182, 31);
-  color: white;
-}
-
-.skill-removable:hover .skill-point-text {
-  display: none;
-}
-.skill-removable:hover .skill-point:after {
-  content: '-';
-}
-
-.skill-removable:hover .skill-point {
-  background-color: red;
-  color: white;
-}
-
-#profile-name {
-  margin-top: 15px;
-}
-
-#profile-name h2 {
-  color: rgb(70, 70, 70);
-}
-
-#profile-name h6 {
-  color: rgb(118, 118, 118);
-}
-
-#profile-description-row p {
-  color: rgb(70, 70, 70);
-  line-height: 1.7;
 }
