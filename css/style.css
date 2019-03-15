@@ -14,10 +14,6 @@ header {
   height: 60px;
 }
 
-header ul {
-  padding-inline-start: 30px;
-}
-
 footer {
   position: absolute;
   bottom: 0;
@@ -53,7 +49,7 @@ footer {
 }
 
 #description-row {
-  padding: 30px;
+  padding: 30px 5px;
 }
 
 #description-row p {
@@ -80,13 +76,21 @@ hr {
   direction: ltr;
 }
 
-.skill {
+.compact-card {
   margin: 5px 5px;
   padding: 5px 8px;
   font-weight: 300;
   align-content: center;
   vertical-align: middle;
   line-height: 1.4;
+  display: inline;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  border-radius: 0.25rem;
+  background-color: #fff;
+}
+
+.skill-add-dropdown {
+  padding-left: 4px;
 }
 
 .skill-point {
@@ -103,7 +107,7 @@ hr {
   color: white;
 }
 
-.skill-endorse {
+.skill-endorsed {
   background-color: rgb(27, 182, 31);
   color: white;
 }
@@ -126,7 +130,7 @@ hr {
   padding-bottom: 6px;
 }
 
-#submitBidAmountBtn {
+.submitBtn {
   background-color: rgb(27, 174, 189);
   color: white;
 }
@@ -205,4 +209,58 @@ hr {
   width: 200px;
   height: 200px;
   border: 1px solid rgba(192, 191, 191, 0.2);
+}
+
+#header-menu li {
+  margin-bottom: auto;
+  margin-top: auto;
+}
+
+#header-menu {
+  padding-inline-start: 30px;
+}
+
+#header-logo {
+  height: 60px;
+}
+
+.skill-endorsable:hover .skill-point-text {
+  display: none;
+}
+.skill-endorsable:hover .skill-point:after {
+  content: '+';
+}
+
+.skill-endorsable:hover .skill-point {
+  background-color: rgb(27, 182, 31);
+  color: white;
+}
+
+.skill-removable:hover .skill-point-text {
+  display: none;
+}
+.skill-removable:hover .skill-point:after {
+  content: '-';
+}
+
+.skill-removable:hover .skill-point {
+  background-color: red;
+  color: white;
+}
+
+#profile-name {
+  margin-top: 15px;
+}
+
+#profile-name h2 {
+  color: rgb(70, 70, 70);
+}
+
+#profile-name h6 {
+  color: rgb(118, 118, 118);
+}
+
+#profile-description-row p {
+  color: rgb(70, 70, 70);
+  line-height: 1.7;
 }

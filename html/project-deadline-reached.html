@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="fa" dir="rtl">
   <head>
-    <title>Project-Bid</title>
+    <title>Project Deadline Reached</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,19 +11,20 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/fonts/flaticon/flaticon.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
   </head>
   <body class="text-right h-100 w-100">
     <header>
       <nav class="navbar fixed-top p-0 navbar-expand navbar-light bg-white shadow-sm">
         <div class="container">
           <a href="#">
-            <img src="img/logo/logo v1.png" alt="" height="60px">
+            <img src="img/logo/logo v1.png" id="header-logo">
           </a>
-          <ul class="nav navbar-nav navbar-right">
-              <li class="nav-item active mt-auto mb-auto">
-                  <a class="nav-link" href="#">حساب کاربری</a>
+          <ul class="nav navbar-nav navbar-right" id="header-menu">
+              <li class="nav-item active">
+                  <a class="nav-link" href="/html/profile-page.html">حساب کاربری</a>
               </li>
-              <li class="nav-item active mt-auto mb-auto">
+              <li class="nav-item active">
                   <a class="nav-link" href="#">خروج</a>
               </li>
           </ul>
@@ -74,19 +75,23 @@
           <div class="col-sm-12">
             <h5 class="font-weight-bold">مهارت‌های لازم:</h5>
             <div class="row skills">
-                <div class="col-xs-auto d-inline shadow-sm rounded bg-white skill">
-                  <span>HTML </span><span class="skill-point">5</span>
-                </div>
-                <div class="col-xs-auto d-inline shadow-sm rounded bg-white skill">
-                  CSS <span class="skill-point">3</span>
-                </div>
-                <div class="col-xs-auto d-inline shadow-sm rounded bg-white skill">
-                  Javascript <span class="skill-point">16</span>
-                </div>
-                <div class="col-xs-auto d-inline shadow-sm rounded bg-white skill">
-                  Typescript <span class="skill-point">2</span>
-                </div>
+              <div class="col-xs-auto compact-card">
+                <span class="skill-name">HTML </span>
+                <span class="skill-point"><span class="skill-point-text">5</span></span>
               </div>
+              <div class="col-xs-auto compact-card">
+                <span class="skill-name">CSS </span>
+                <span class="skill-point"><span class="skill-point-text">3</span></span>
+              </div>
+              <div class="col-xs-auto compact-card">
+                <span class="skill-name">Javascript </span>
+                <span class="skill-point"><span class="skill-point-text">16</span></span>
+              </div>
+              <div class="col-xs-auto compact-card">
+                <span class="skill-name">Typescript </span>
+                <span class="skill-point"><span class="skill-point-text">2</span></span>
+              </div>
+            </div>
           </div>
         </div>
         <div class="row" id="bid-row">
