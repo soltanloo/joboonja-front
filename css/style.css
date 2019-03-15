@@ -6,7 +6,7 @@ body {
   margin: 0;
   margin-bottom: 170px;
   height: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, IRANSans, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Vazir, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   background-color: rgb(246, 246, 246);
 }
 
@@ -148,7 +148,7 @@ hr {
 }
 
 .profile-picture {
-  z-index: 1000;
+  z-index: 100;
   margin-top: -95px;
   width: 190px;
   height: 190px;
@@ -165,4 +165,44 @@ hr {
 .register-form-col {
   margin-top: -70px;
   padding: 10px 15px;
+}
+
+#blue-thing {
+  width: 120px;
+  height: 30px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgb(111, 201, 205);
+  -webkit-clip-path: polygon(20% 0%, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(20% 0%, 100% 0, 100% 100%, 0 100%);
+  z-index: 102;
+  opacity: 0.8;
+  margin-top: -30px;
+  margin-left: -95px;
+}
+
+#blue-thing-wider {
+  width: 120px;
+  height: 30px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgb(130, 218, 222);
+  -webkit-clip-path: polygon(20% 0%, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(20% 0%, 100% 0, 100% 100%, 0 100%);
+  z-index: 101;
+  opacity: 0.8;
+  margin-top: -30px;
+  margin-left: -105px;
+}
+
+#profile-picture-col {
+  position: relative;
+}
+
+#project-picture {
+  width: 200px;
+  height: 200px;
+  border: 1px solid rgba(192, 191, 191, 0.2);
 }
