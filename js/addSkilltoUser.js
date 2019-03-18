@@ -1,15 +1,29 @@
-function addSkilltoUser(skillName){
-    
-    var myreq = new XMLHttpRequest();
-    myreq.open("POST","localhost:8080/user/addskill",true);
-    myreq.send("skillName=Python");
-    myreq.onload = function(){
-        if(myreq.status != 200){
-            console.log("200 hast");
+var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+
+function addSkilltoUser(skillName) {
+    var http = new XMLHttpRequest();
+    var url = "http://localhost:8080/user/addskill";
+    var params = "skillName=" + skillName;
+    http.open("POST", url, true);
+    http.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    http.onreadystatechange = function() {
+        if(http.readyState == 4) {
+            console.log(http);
         }
-        console.log("200 nist");
     }
+    http.send(params);
 }
-console.log("Hello!");
-addSkilltoUser("Python");
-console.log("World!");
+
+function getProjects() {
+    var http = new XMLHttpRequest();
+    var url = "http://localhost:8080/project";
+    http.open("GET", url, true);
+    http.onreadystatechange = function() {
+        if(http.readyState == 4 && http.status == 200) {
+            console.log(http);
+        }
+    }
+    http.send();
+}
+getProjects();
+addSkilltoUser("CSS");
