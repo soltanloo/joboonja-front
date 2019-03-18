@@ -13,17 +13,4 @@ function addSkilltoUser(skillName) {
     }
     http.send(params);
 }
-
-function getProjects() {
-    var http = new XMLHttpRequest();
-    var url = "http://localhost:8080/project";
-    http.open("GET", url, true);
-    http.onreadystatechange = function() {
-        if(http.readyState == 4 && http.status == 200) {
-            console.log(http.responseText);
-        }
-    }
-    http.send();
-}
-getProjects();
 addSkilltoUser("CSS");
