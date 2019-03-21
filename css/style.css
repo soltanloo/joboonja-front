@@ -312,3 +312,32 @@ hr {
   font-size: 20px;
  }
 
+#home-main-container {
+  margin-top: -25px;
+}
+
+#user-search {
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.profile-brief {
+  height: 70px;
+  width: 100%;
+  background-color: white;
+  margin-bottom: 4px;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  border-radius: 0.25rem;
+}
+
+.project-brief {
+  height: 180px;
+  width: 100%;
+  background-color: white;
+  margin-bottom: 15px;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  border-radius: 0.25rem;
+}
+
+#profile-list {
+}
