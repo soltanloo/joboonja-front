@@ -362,16 +362,89 @@ hr {
   color: gray;
 }
 
+.profile-brief-picture {
+  width: 50px;
+  height: 50px;
+}
+
 .project-brief {
-  height: 180px;
+  padding: 20px;
+  min-height: 180px;
   width: 100%;
   background-color: white;
   margin-bottom: 15px;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
   border-radius: 0.25rem;
+  display: flex;
+  /* flex-wrap: wrap; */
 }
 
-.profile-brief-picture {
-  width: 50px;
-  height: 50px;
+.project-brief:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.10);
+}
+
+.project-brief-picture {
+  width: 140px;
+  height: 140px;
+  border: 1px solid rgba(192, 191, 191, 0.2);
+}
+
+.project-brief-description {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+  justify-content: space-between;
+  padding: 2px 0px;
+  flex-grow: 1;
+  align-content: space-between;
+}
+
+.project-brief-deadline {
+  background-color: rgb(245, 245, 245);
+  border-radius: 0.25rem;
+  padding: 0px 4px;
+  font-size: 0.75rem;
+  color: rgb(110, 110, 110);
+}
+
+.project-brief-title {
+  display: inline;
+  flex-grow: 1;
+}
+
+.project-brief-description-p {
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.project-brief-budget {
+  color: rgb(18, 133, 140);
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.project-brief-skills-title {
+  font-size: 0.7rem;
+  color: rgb(158, 161, 161);
+  font-weight: 200;
+}
+
+.project-brief-skill {
+  background-color: rgb(245, 245, 245);
+  border-radius: 0.25rem;
+  padding: 2px 4px;
+  font-size: 0.75rem;
+  color: rgb(124, 123, 123);
+  margin: auto;
+  border: 1px solid rgba(192, 191, 191, 0.2);
+  font-weight: 500;
+}
+
+.grayed-out {
+  opacity: 0.75;
+}
+
+.project-brief-deadline-reached {
+  background-color: rgb(64, 135, 135);
+  color: white;
 }
