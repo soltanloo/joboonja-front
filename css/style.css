@@ -49,6 +49,10 @@ footer {
   height: 150px;
 }
 
+#blue-bar-widest {
+  height: 250px;
+}
+
 hr {
   border-top: 2px dashed rgb(79, 205, 209);
   margin: 0 -15px;
@@ -257,3 +261,54 @@ hr {
   height: 200px;
   border: 1px solid rgba(192, 191, 191, 0.2);
 }
+
+#intro-title {
+  color: rgb(18, 133, 140);
+  font-weight: 600;
+  font-size: 36px;
+}
+
+#intro-subtitle {
+  font-size: 14px;
+  text-indent: 3%;
+  color: rgb(32, 37, 38);
+}
+
+#home-search-bar {
+  height: 55px;
+  padding: 5px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-bottom: 3px rgb(27, 174, 189) solid;
+}
+
+#home-search-bar * {
+  height: 100%;
+}
+
+#home-search-form * {
+  font-weight: 100;
+  font-size: 20px;
+}
+
+#home-search-form button {
+  border-radius: 0;
+  color: white;
+  border: none;
+  width: 85px;
+  padding-bottom: 5px;
+  background-color: rgb(27, 174, 189);
+}
+
+#home-search-input {
+  padding-top: 0px;
+  border: none;
+  border-width: 0px;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+#home-search-input::placeholder {
+  color: rgba(20, 137, 150, 0.6);
+  line-height: calc(100);
+  font-size: 20px;
+ }
+
