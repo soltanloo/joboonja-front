@@ -438,6 +438,7 @@ hr {
   margin: auto;
   border: 1px solid rgba(192, 191, 191, 0.2);
   font-weight: 500;
+  margin: 0px 2px;
 }
 
 .grayed-out {
