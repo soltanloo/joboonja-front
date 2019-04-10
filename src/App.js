@@ -7,6 +7,8 @@ import UserPage from './UserPage';
 import LoginPage from './LoginPage';
 import RegisterPage from './RegisterPage';
 import Footer from './Footer';
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 import './style/bootstrap.css';
 import './style/style.css';
 import './style/fonts/flaticon/flaticon.css';
@@ -25,6 +27,7 @@ class App extends Component {
     return (
       <BrowserRouter >
         <Header />
+          <ToastContainer />
           <Switch>
             <Route
               path="/"

@@ -1,5 +1,6 @@
 import axios from 'axios';
 import QS from 'querystring';
+import { toast } from 'react-toastify';
 const url = "http://localhost:8000"
 const FETCH_PROJECTS = "FETCH_PROJECTS"
 const FETCH_PROJECT = "FETCH_PROJECT"
@@ -34,10 +35,11 @@ export function bid(projectId, bidAmount) {
         QS.stringify({ bidAmount }),
         { headers: {'Content-Type': 'application/x-www-form-urlencoded'} })
       .then(res => {
+        toast.success('پیشنهاد با موفقیت ثبت شد')
         dispatch(fetchProject(projectId))
       })
       .catch(err => {
-
+        toast.error('ثبت پیشنهاد با خطا مواجه شد')
       })
   }
 }

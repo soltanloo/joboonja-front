@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { fetchProject, bid } from './actions/project_actions';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 export class ProjectPage extends Component {
   static propTypes = {
@@ -14,7 +15,6 @@ export class ProjectPage extends Component {
     this.state = {
       bidAmount: '',
       okayToSubmit: true,
-      showBidNotification: false,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -35,7 +35,7 @@ export class ProjectPage extends Component {
       event.target.reset();
       this.props.fetchProject(this.props.match.params.id);
     } else {
-      this.setState({ showBidNotification: true })
+      toast.error('مبلغ پیشنهادی بالاتر از بودجه است')
     }
   }
 
