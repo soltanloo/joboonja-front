@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { fetchProjects } from './actions/project_actions';
 import ProjectBrief from './ProjectBrief';
+import { Link } from 'react-router-dom';
 
 export class ProjectsList extends Component {
   static propTypes = {
@@ -17,9 +18,9 @@ export class ProjectsList extends Component {
     return (
       <div className="col-lg-9 col-md-7 col-12 mt-5 mt-md-0" id="projects-list">
         {this.props.projects && this.props.projects.map(project => 
-          <a href={`/projects/${project.id}`}>
+          <Link to={`/projects/${project.id}`}>
             <ProjectBrief project={project} />
-          </a>
+          </Link>
         )}
       </div>
     )

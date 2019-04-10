@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom';
 import logo from './img/logo/logo v1.png';
 
 export default class Header extends Component {
@@ -12,16 +13,16 @@ export default class Header extends Component {
       <header>
         <nav className="navbar fixed-top p-0 navbar-expand navbar-light bg-white shadow-sm">
           <div className="container">
-            <a href="/">
+            <Link to={"/"}>
               <img src={logo} id="header-logo" alt="Joboonja Logo" />
-            </a>
+            </Link>
             {this.props.loggedIn &&
               <ul className="nav navbar-nav navbar-right" id="header-menu">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/users/1">حساب کاربری</a>
+                    <Link class="nav-link" to={"/users/1"}>حساب کاربری</Link>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="/">خروج</a>
+                    <Link class="nav-link" to={"/"}>خروج</Link>
                 </li>
             </ul>
             }

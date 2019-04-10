@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { fetchProject, bid } from './actions/project_actions';
+import { Link } from 'react-router-dom';
 
 export class ProjectPage extends Component {
   static propTypes = {
@@ -96,9 +97,9 @@ export class ProjectPage extends Component {
                 </div>
                 {this.isPastDeadline(project.deadline) && <div class="col-sm-12 text-success">
                 {project.winner && <div><i class="flaticon-correct-symbol ml-1"></i>
-                  <strong><a href={`/users/${project.winner.id}`}>
+                  <strong><Link to={`/users/${project.winner.id}`}>
                     <span>برنده: {project.winner.firstName + " " + project.winner.lastName}</span>
-                  </a></strong></div>}
+                  </Link></strong></div>}
                 </div>}
               </div>
               <h5 class="font-weight-bold my-sm-3">توضیحات</h5>

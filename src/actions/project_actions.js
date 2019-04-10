@@ -1,9 +1,8 @@
 import axios from 'axios';
 import QS from 'querystring';
-const url = "http://localhost:8080"
+const url = "http://localhost:8000"
 const FETCH_PROJECTS = "FETCH_PROJECTS"
 const FETCH_PROJECT = "FETCH_PROJECT"
-const BID_SUBMITTED = "BID_SUBMITTED"
 
 export function fetchProjects() {
   return dispatch => {

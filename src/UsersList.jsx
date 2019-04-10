@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import UserBrief from './UserBrief';
 import { fetchUsers } from './actions/user_actions';
+import { Link } from 'react-router-dom';
 
 export class UsersList extends Component {
   static propTypes = {
@@ -20,9 +21,9 @@ export class UsersList extends Component {
           <input type="text" className="form-control h-100" name="user-name" id="user-search-input" placeholder="جستجوی نام کاربر" />
         </div>
         {this.props.users && this.props.users.map(user => 
-          <a href={`/users/${user.id}`}>
+          <Link to={`/users/${user.id}`}>
             <UserBrief key={user.id} user={user} />
-          </a>
+          </Link>
         )
         }
       </div>

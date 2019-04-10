@@ -1,6 +1,6 @@
 import axios from 'axios';
 import QS from 'querystring';
-const url = "http://localhost:8080"
+const url = "http://localhost:8000"
 const FETCH_USERS = "FETCH_USERS"
 const FETCH_USER = "FETCH_USER"
 
