@@ -25,20 +25,15 @@ class App extends Component {
 
   render() {
     return (
-      <BrowserRouter >
+      <BrowserRouter>
         <Header />
           <ToastContainer />
           <Switch>
-            <Route
-              path="/"
-              exact
-              component={HomePage}
-              loggedIn={this.state.loggedIn}
-            />
-            <Route path="/projects/:id" exact component={ProjectPage} />
-            <Route path="/users/:id" exact component={UserPage} />
-            <Route path="/login" exact component={LoginPage} />
-            <Route path="/register" exact component={RegisterPage} />
+            <Route path="/" exact component={HomePage} loggedIn={this.state.loggedIn} />
+            <Route path="/projects/:id" component={ProjectPage} />
+            <Route path="/users/:id" component={UserPage} />
+            <Route path="/login" component={LoginPage} />
+            <Route path="/register" component={RegisterPage} />
           </Switch>
         <Footer />
       </BrowserRouter>

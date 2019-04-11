@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import UserBrief from './UserBrief';
 import { fetchUsers } from './actions/user_actions';
 import { Link } from 'react-router-dom';
+import UserSearch from './UserSearch';
 
 export class UsersList extends Component {
   static propTypes = {
@@ -17,9 +18,7 @@ export class UsersList extends Component {
   render() {
     return (
       <div className="col-lg-3 col-md-5 col-12" id="profiles-list">
-        <div className="bg-white rounded shadow-sm w-100 align-items-center" id="user-search">
-          <input type="text" className="form-control h-100" name="user-name" id="user-search-input" placeholder="جستجوی نام کاربر" />
-        </div>
+        <UserSearch />
         {this.props.users && this.props.users.map(user => 
           <Link to={`/users/${user.id}`}>
             <UserBrief key={user.id} user={user} />

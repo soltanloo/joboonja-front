@@ -2,11 +2,9 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import ProjectsList from './ProjectsList';
 import UsersList from './UsersList';
+import ProjectSearch from './ProjectSearch';
 
 export default class HomePage extends Component {
-  static propTypes = {
-    prop: PropTypes
-  }
 
   render() {
     return (
@@ -24,12 +22,7 @@ export default class HomePage extends Component {
               </div>
               <div class="row justify-content-center mt-3">
                 <div class="col-md-7" id="home-search-bar">
-                  <form class="form-inline d-flex justify-content-between" id="home-search-form">
-                      <div class="form-group flex-grow-1 ml-1">
-                        <input type="text" class="form-control w-100" id="home-search-input" placeholder="جستجو در جاب‌اونجا" />
-                      </div>
-                      <button type="submit">جستجو</button>
-                    </form>
+                  <ProjectSearch />
                 </div>
               </div>
             </div>

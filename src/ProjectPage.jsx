@@ -4,6 +4,9 @@ import PropTypes from 'prop-types'
 import { fetchProject, bid } from './actions/project_actions';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { isPastDeadline, calcTimeDifference } from './timeHelper';
+import ProjectDeadlineCounter from './ProjectDeadlineCounter';
+var persianJs = require('persianjs');
 
 export class ProjectPage extends Component {
   static propTypes = {
@@ -45,28 +48,12 @@ export class ProjectPage extends Component {
     }
   }
 
-  calcTimeDifference(time) {
-    var now = new Date();
-    var deadline = new Date(time);
-    var diffMs = (deadline - now);
-    var diffDays = Math.floor(diffMs / 86400000); // days
-    var diffHrs = Math.floor((diffMs % 86400000) / 3600000); // hours
-    var diffMins = Math.round(((diffMs % 86400000) % 3600000) / 60000); // minutes
-    return (diffDays + ":" + diffHrs + ":" + diffMins);
-  }
-
-  isPastDeadline(time) {
-    var now = new Date();
-    var deadline = new Date(time);
-    var diffMs = (deadline - now);
-    return diffMs <= 0;
-  }
-
   render() {
     if (!this.props.curr) {
       return <p>در حال بارگذاری...</p>
     }
     const { project, hasBidden } = this.props.curr;
+    const pastDeadline = isPastDeadline(project.deadline);
     return (
       <main>
         <div class="container-fluid">
@@ -81,21 +68,22 @@ export class ProjectPage extends Component {
             <div class="col-lg-9 col-md-7 pr-md-0" id="project-description-col">
               <h2 class="font-weight-bold mb-3 mt-md-1 mt-sm-2" id="project-title">{project.title}</h2>
               <div class="row">
-                {this.isPastDeadline(project.deadline) ? <div class="col-sm-12 deadline-reached">
+                {pastDeadline ?
+                <div class="col-sm-12 deadline-reached">
                   <strong>
                     <i class="flaticon-success ml-1"></i>
                     <span class="font-weight-bold">مهلت تمام شده</span>
                   </strong>
-                </div>
-                : <div class="col-sm-12 deadline">
-                <i class="flaticon-success ml-1"></i>
-                <span><strong>زمان باقی‌مانده:</strong> ۱۷ دقیقه و ۲۵ ثانیه</span>
+                </div> :
+                <div class="col-sm-12 deadline">
+                  <i class="flaticon-success ml-1"></i>
+                  <ProjectDeadlineCounter deadline={project.deadline} mode={"full"} />
                 </div>}
                 <div class="col-sm-12 budget">
                   <strong><i class="flaticon-money-bag ml-1"></i>
-                  <span>بودجه: {project.budget} تومان</span></strong>
+                  <span>بودجه: {persianJs(project.budget).englishNumber().toString()} تومان</span></strong>
                 </div>
-                {this.isPastDeadline(project.deadline) && <div class="col-sm-12 text-success">
+                {pastDeadline && <div class="col-sm-12 text-success">
                 {project.winner && <div><i class="flaticon-correct-symbol ml-1"></i>
                   <strong><Link to={`/users/${project.winner.id}`}>
                     <span>برنده: {project.winner.firstName + " " + project.winner.lastName}</span>
@@ -123,7 +111,7 @@ export class ProjectPage extends Component {
             </div>
           </div>
           <div class="row" id="bid-row">
-            {this.isPastDeadline(project.deadline) ? 
+            {pastDeadline ? 
             <div class="col-xs-auto col-sm-12 deadline-reached">
               <i class="flaticon-danger ml-1"></i>
               <span>مهلت ارسال پیشنهاد برای این پروژه به پایان رسیده است!</span>
