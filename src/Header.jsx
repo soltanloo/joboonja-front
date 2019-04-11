@@ -4,9 +4,6 @@ import { Link } from 'react-router-dom';
 import logo from './img/logo/logo v1.png';
 
 export default class Header extends Component {
-  static propTypes = {
-    prop: PropTypes
-  }
 
   render() {
     return (
@@ -18,11 +15,11 @@ export default class Header extends Component {
             </Link>
             {this.props.loggedIn &&
               <ul className="nav navbar-nav navbar-right" id="header-menu">
-                <li class="nav-item active">
-                    <Link class="nav-link" to={"/users/1"}>حساب کاربری</Link>
+                <li className={"nav-item active"}>
+                    <Link className={"nav-link"} to={"/users/1"}>حساب کاربری</Link>
                 </li>
-                <li class="nav-item active">
-                    <Link class="nav-link" to={"/"}>خروج</Link>
+                <li className={"nav-item active"}>
+                    <Link className={"nav-link"} to={"/"}>خروج</Link>
                 </li>
             </ul>
             }
@@ -38,5 +35,5 @@ Header.propTypes = {
 }
 
 Header.defaultProps = {
-  loggedIn: true,
+  loggedIn: false,
 }

@@ -7,9 +7,6 @@ import { Link } from 'react-router-dom';
 import UserSearch from './UserSearch';
 
 export class UsersList extends Component {
-  static propTypes = {
-    prop: PropTypes
-  }
 
   componentDidMount() {
     this.props.fetchUsers();
@@ -20,7 +17,7 @@ export class UsersList extends Component {
       <div className="col-lg-3 col-md-5 col-12" id="profiles-list">
         <UserSearch />
         {this.props.users && this.props.users.map(user => 
-          <Link to={`/users/${user.id}`}>
+          <Link key={user.id} to={`/users/${user.id}`}>
             <UserBrief key={user.id} user={user} />
           </Link>
         )
@@ -28,6 +25,15 @@ export class UsersList extends Component {
       </div>
     )
   }
+}
+
+UsersList.propTypes = {
+  users: PropTypes.array.isRequired,
+  fetchUsers: PropTypes.func.isRequired,
+}
+
+UsersList.defaultProps = {
+  users: [],
 }
 
 const mapStateToProps = (state) => ({

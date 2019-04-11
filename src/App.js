@@ -8,6 +8,7 @@ import LoginPage from './LoginPage';
 import RegisterPage from './RegisterPage';
 import Footer from './Footer';
 import { ToastContainer } from "react-toastify";
+
 import 'react-toastify/dist/ReactToastify.css';
 import './style/bootstrap.css';
 import './style/style.css';
@@ -26,10 +27,10 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <Header />
+        <Header loggedIn={this.state.loggedIn} />
           <ToastContainer />
           <Switch>
-            <Route path="/" exact component={HomePage} loggedIn={this.state.loggedIn} />
+            <Route path="/" exact component={HomePage} />
             <Route path="/projects/:id" component={ProjectPage} />
             <Route path="/users/:id" component={UserPage} />
             <Route path="/login" component={LoginPage} />

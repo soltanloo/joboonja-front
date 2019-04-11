@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { isPastDeadline, calcTimeDifference } from './timeHelper';
+import { calcTimeDifference } from './timeHelper';
 
 export default class ProjectDeadlineCounter extends Component {
 
@@ -9,7 +9,14 @@ export default class ProjectDeadlineCounter extends Component {
     this.state = {
       difference: calcTimeDifference(this.props.deadline, this.props.mode),
     };
-    setInterval(() => this.calcTimeDifference(), 1000)
+  }
+
+  componentDidMount() {
+    this.timerID = setInterval(() => this.calcTimeDifference(), 1000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timerID);
   }
 
   calcTimeDifference() {
@@ -23,4 +30,13 @@ export default class ProjectDeadlineCounter extends Component {
       : <span><strong>زمان باقی‌مانده: </strong>{this.state.difference}</span>
     )
   }
+}
+
+ProjectDeadlineCounter.propTypes = {
+  mode: PropTypes.string,
+  deadline: PropTypes.number.isRequired,
+}
+
+ProjectDeadlineCounter.defaultProps = {
+  mode: 'compact',
 }

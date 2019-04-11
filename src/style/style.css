@@ -210,7 +210,7 @@ hr {
   color: gray;
 }
 
-.deadline-reached {
+.deadline-reached * {
   color: red;
 }
 
@@ -222,7 +222,7 @@ hr {
   color: green;
 }
 
-.register-form-col {
+.form-col {
   margin-top: -70px;
   padding: 10px 15px;
 }

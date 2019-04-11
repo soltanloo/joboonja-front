@@ -36,6 +36,7 @@ export function addSkill(userId, skillName) {
         { headers: {'Content-Type': 'application/x-www-form-urlencoded'} })
       .then(res => {
         toast.success('مهارت با موفقیت افزوده شد')
+        dispatch(fetchUser(userId))
       })
       .catch(err => {
         toast.error('افزودن مهارت با خطا مواجه شد')
