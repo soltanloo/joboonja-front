@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import Slideshow from './Slideshow';
+import Slideshow from '../Slideshow';
 
 export default class LoginPage extends Component {
 

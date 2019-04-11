@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { calcTimeDifference } from './timeHelper';
+import { calcTimeDifference } from '../helpers/timeHelper';
 
 export default class ProjectDeadlineCounter extends Component {
 

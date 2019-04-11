@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Header from './Header';
-import HomePage from './HomePage';
-import ProjectPage from './ProjectPage';
-import UserPage from './UserPage';
-import LoginPage from './LoginPage';
-import RegisterPage from './RegisterPage';
+import HomePage from './homepage/HomePage';
+import ProjectPage from './projects/ProjectPage';
+import UserPage from './users/UserPage';
+import LoginPage from './login/LoginPage';
+import RegisterPage from './register/RegisterPage';
 import Footer from './Footer';
 import { ToastContainer } from "react-toastify";
 
@@ -28,7 +28,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <Header loggedIn={this.state.loggedIn} />
-          <ToastContainer />
+          <ToastContainer rtl toastClassName={"custom-toast"} />
           <Switch>
             <Route path="/" exact component={HomePage} />
             <Route path="/projects/:id" component={ProjectPage} />

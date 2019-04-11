@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-import { fetchProject } from './actions/project_actions';
+import { fetchProject } from '../actions/project_actions';
 import { Link } from 'react-router-dom';
-import { isPastDeadline } from './timeHelper';
+import { isPastDeadline } from '../helpers/timeHelper';
 import ProjectDeadlineCounter from './ProjectDeadlineCounter';
 import BidForm from './BidForm';
 var persianJs = require('persianjs');

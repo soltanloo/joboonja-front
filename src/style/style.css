@@ -449,3 +449,7 @@ hr {
   background-color: rgb(64, 135, 135);
   color: white;
 }
+
+.custom-toast {
+  font-family: Vazir;
+}

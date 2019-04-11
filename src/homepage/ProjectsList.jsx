@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { fetchProjects } from './actions/project_actions';
+import { fetchProjects } from '../actions/project_actions';
 import ProjectBrief from './ProjectBrief';
 import { Link } from 'react-router-dom';
 

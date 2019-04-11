@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { isPastDeadline } from './timeHelper';
-import ProjectDeadlineCounter from './ProjectDeadlineCounter';
+import { isPastDeadline } from '../helpers/timeHelper';
+import ProjectDeadlineCounter from '../projects/ProjectDeadlineCounter';
 var persianJs = require('persianjs');
 
 export default class ProjectBrief extends Component {

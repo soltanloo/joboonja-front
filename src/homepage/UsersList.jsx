@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import UserBrief from './UserBrief';
-import { fetchUsers } from './actions/user_actions';
+import { fetchUsers } from '../actions/user_actions';
 import { Link } from 'react-router-dom';
 import UserSearch from './UserSearch';
 

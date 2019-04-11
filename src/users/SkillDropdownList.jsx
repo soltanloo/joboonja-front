@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { addSkill } from './actions/user_actions';
+import { addSkill } from '../actions/user_actions';
 
 export class SkillDropdownList extends Component {
 

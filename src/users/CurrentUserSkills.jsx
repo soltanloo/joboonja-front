@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { removeSkill, addSkill } from './actions/user_actions';
+import { removeSkill, addSkill } from '../actions/user_actions';
 
 export class CurrentUserSkills extends Component {
 

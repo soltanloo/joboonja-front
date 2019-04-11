@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { endorseSkill } from './actions/user_actions';
+import { endorseSkill } from '../actions/user_actions';
 
 export class OtherUserSkills extends Component {
 
@@ -28,6 +28,12 @@ export class OtherUserSkills extends Component {
       </div>
     )
   }
+}
+
+OtherUserSkills.propTypes = {
+  skills: PropTypes.array.isRequired,
+  skillsEndorsed: PropTypes.array.isRequired,
+  endorseSkill: PropTypes.func.isRequired,
 }
 
 const mapStateToProps = (state) => ({

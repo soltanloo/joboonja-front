@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { bid } from './actions/project_actions';
+import { bid } from '../actions/project_actions';
 import { toast } from 'react-toastify';
 
 export class BidForm extends Component {

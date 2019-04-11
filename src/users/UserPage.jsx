@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { fetchUser } from './actions/user_actions';
+import { fetchUser } from '../actions/user_actions';
 import CurrentUserSkills from './CurrentUserSkills';
 import OtherUserSkills from './OtherUserSkills';
 import SkillDropdownList from './SkillDropdownList';
