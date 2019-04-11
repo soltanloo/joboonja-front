@@ -1,10 +1,24 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import Slideshow from '../Slideshow';
+import Slideshow from '../register/Slideshow';
+import { Field, reduxForm } from 'redux-form';
+import { toast } from 'react-toastify';
 
-export default class LoginPage extends Component {
+class LoginPage extends Component {
+  
+  renderField = ({ input, label, type, meta: { touched, error } }) => (
+    <div className={"col"}>
+      <input className={"form-control"} {...input} placeholder={label} type={type}/>
+      {touched && error && <span style={{color: 'red'}}>- {error}</span>}
+    </div>
+  )
+
+  onSubmit(values) {
+		toast.info('هنوز بک‌اند نداره :(')
+	}
 
   render() {
+    const { handleSubmit, pristine, reset, submitting } = this.props;
     return (
       <main>
         <Slideshow />
@@ -12,19 +26,15 @@ export default class LoginPage extends Component {
           <div className={"row"}>
             <div className={"col-lg-4 col-md-8 col-11 mx-auto justify-content-center shadow-lg rounded bg-light form-col"}>
               <h2 className={"text-center mb-3"}>ورود</h2>
-                <form>
+                <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
                   <div className={"form-row mb-2"}>
-                    <div className={"col"}>
-                      <input type="text" className={"form-control"} id="username" placeholder="نام کاربری" />
-                    </div>
+                    <Field name="username" required type="text" id="username" label="نام کاربری" component={this.renderField} />
                   </div>
                   <div className={"form-row mb-2"}>
-                    <div className={"col"}>
-                      <input type="password" className={"form-control"} id="password" placeholder="گذرواژه" />
-                    </div>
+                    <Field name="password" required type="password" id="password" label="گذرواژه" component={this.renderField} />
                   </div>
                   <div className={"form-row mb-2 justify-content-center"}>
-                    <button type="submit" className={"btn submitBtn"}>ثبت مشخصات</button>
+                    <button type="submit" disabled={submitting} className={"btn submitBtn"}>ثبت مشخصات</button>
                   </div>
                 </form>
             </div>
@@ -34,3 +44,21 @@ export default class LoginPage extends Component {
     )
   }
 }
+
+const validate = values => {
+  const errors = {}
+  if (!values.username) {
+    errors.username = 'ضروری'
+  } else if (!new RegExp("^(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$").test(values.username)) {
+    errors.username = 'نام کاربری فرمت صحیحی ندارد'
+  }
+  if (!values.password) {
+    errors.password = 'ضروری'
+  }
+  return errors
+}
+
+export default reduxForm({
+  form: 'loginForm',
+  validate,
+})(LoginPage)
