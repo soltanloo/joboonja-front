@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
-import Slideshow from './Slideshow';
 import { Field, reduxForm } from 'redux-form'
 import { toast } from 'react-toastify';
 
-class RegisterPage extends Component {
+class RegisterForm extends Component {
 
   renderField = ({ input, label, type, meta: { touched, error } }) => (
     <div className={"col"}>
@@ -28,8 +27,6 @@ class RegisterPage extends Component {
   render() {
     const { handleSubmit, submitting } = this.props;
     return (
-      <main>
-        <Slideshow />
         <div className={"container"} id="register-form-container">
           <div className={"row"}>
             <div className={"col-lg-5 col-md-8 col-11 mx-auto justify-content-center shadow-lg rounded bg-light form-col"}>
@@ -60,7 +57,6 @@ class RegisterPage extends Component {
             </div>
           </div>
         </div>
-      </main>
     )
   }
 }
@@ -90,4 +86,4 @@ const validate = values => {
 export default reduxForm({
   form: 'registerForm',
   validate,
-})(RegisterPage)
+})(RegisterForm)

@@ -4,8 +4,7 @@ import Header from './Header';
 import HomePage from './homepage/HomePage';
 import ProjectPage from './projects/ProjectPage';
 import UserPage from './users/UserPage';
-import LoginPage from './login/LoginPage';
-import RegisterPage from './register/RegisterPage';
+import AuthPage from './auth/AuthPage';
 import Footer from './Footer';
 import { ToastContainer } from "react-toastify";
 
@@ -33,8 +32,8 @@ class App extends Component {
             <Route path="/" exact component={HomePage} />
             <Route path="/projects/:id" component={ProjectPage} />
             <Route path="/users/:id" component={UserPage} />
-            <Route path="/login" component={LoginPage} />
-            <Route path="/register" component={RegisterPage} />
+            <Route path="/login" component={() => <AuthPage mode={'login'} />} />
+            <Route path="/register" component={() => <AuthPage mode={'register'} />} />
           </Switch>
         <Footer />
       </BrowserRouter>
