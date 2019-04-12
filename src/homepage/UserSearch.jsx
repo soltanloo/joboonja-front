@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import { toast } from 'react-toastify';
 
 export default class UserSearch extends Component {
   
   keyPress(e){
-    if(e.keyCode == 13){
+    if(e.keyCode === 13){
       toast.info('هنوز بک‌اند نداره :(');
     }
   }

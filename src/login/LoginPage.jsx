@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import Slideshow from '../register/Slideshow';
 import { Field, reduxForm } from 'redux-form';
 import { toast } from 'react-toastify';
@@ -18,7 +17,7 @@ class LoginPage extends Component {
 	}
 
   render() {
-    const { handleSubmit, pristine, reset, submitting } = this.props;
+    const { handleSubmit, submitting } = this.props;
     return (
       <main>
         <Slideshow />

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import { toast } from 'react-toastify';
 
 export default class ProjectSearch extends Component {

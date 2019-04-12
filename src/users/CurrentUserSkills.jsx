@@ -7,9 +7,9 @@ export class CurrentUserSkills extends Component {
 
   renderSkills() {
     return this.props.skills.map(skill =>
-      <div key={skill.name} className={"col-xs-auto compact-card skill-removable"}>
+      <div key={skill.id} className={"col-xs-auto compact-card skill-removable"}>
         <span className={"skill-name"}>{skill.name} </span>
-        <span className={"skill-point"} onClick={() => this.props.removeSkill(this.props.userId, skill.name)}>
+        <span className={"skill-point"} onClick={() => this.props.removeSkill(this.props.userId, skill.id)}>
           <span className={"skill-point-text"}>{skill.point}</span>
         </span>
       </div>

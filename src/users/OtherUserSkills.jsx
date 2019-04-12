@@ -8,14 +8,14 @@ export class OtherUserSkills extends Component {
   renderSkills() {
     return this.props.skills.map(skill => {
       if(this.props.skillsEndorsed[skill.name]) {
-        return (<div key={skill.name} className={"col-xs-auto compact-card"}>
+        return (<div key={skill.id} className={"col-xs-auto compact-card"}>
           <span className={"skill-name"}>{skill.name} </span>
           <span className={"skill-point skill-endorsed"}><span className={"skill-point-text"}>{skill.point}</span></span>
         </div>)
       } else {
-        return (<div key={skill.name} className={"col-xs-auto compact-card skill-endorsable"}>
+        return (<div key={skill.id} className={"col-xs-auto compact-card skill-endorsable"}>
           <span className={"skill-name"}>{skill.name} </span>
-          <span className={"skill-point"} onClick={() => this.props.endorseSkill(this.props.userId, 1, skill.name)}><span className={"skill-point-text"}>{skill.point}</span></span>
+          <span className={"skill-point"} onClick={() => this.props.endorseSkill(this.props.userId, 1, skill.id)}><span className={"skill-point-text"}>{skill.point}</span></span>
         </div>)
       }
     })
@@ -32,7 +32,7 @@ export class OtherUserSkills extends Component {
 
 OtherUserSkills.propTypes = {
   skills: PropTypes.array.isRequired,
-  skillsEndorsed: PropTypes.array.isRequired,
+  skillsEndorsed: PropTypes.object.isRequired,
   endorseSkill: PropTypes.func.isRequired,
 }
 

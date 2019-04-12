@@ -31,7 +31,7 @@ export function fetchProject(id) {
 
 export function bid(projectId, bidAmount) {
   return dispatch => {
-    axios.post(`${url}/projects/bid?id=${projectId}`,
+    axios.post(`${url}/projects/bids?id=${projectId}`,
         QS.stringify({ bidAmount }),
         { headers: {'Content-Type': 'application/x-www-form-urlencoded'} })
       .then(res => {

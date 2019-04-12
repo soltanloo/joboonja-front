@@ -31,7 +31,7 @@ export function fetchUser(id) {
 
 export function addSkill(userId, skillName) {
   return dispatch => {
-    axios.post(`${url}/users/addskill?id=${userId}`,
+    axios.post(`${url}/users/skills?id=${userId}`,
         QS.stringify({ skillName }),
         { headers: {'Content-Type': 'application/x-www-form-urlencoded'} })
       .then(res => {
@@ -44,11 +44,9 @@ export function addSkill(userId, skillName) {
   }
 }
 
-export function removeSkill(userId, skillName) {
+export function removeSkill(userId, skillId) {
   return dispatch => {
-    axios.post(`${url}/users/removeskill?id=${userId}`,
-        QS.stringify({ skillName }),
-        { headers: {'Content-Type': 'application/x-www-form-urlencoded'} })
+    axios.delete(encodeURI(`${url}/users/skills?id=${userId}&skillId=${skillId}`))
       .then(res => {
         toast.success('مهارت با موفقیت حذف شد')
         dispatch(fetchUser(userId))
@@ -59,17 +57,15 @@ export function removeSkill(userId, skillName) {
   }
 }
 
-export function endorseSkill(userId, endorserId, skillName) {
+export function endorseSkill(userId, endorserId, skillId) {
   return dispatch => {
-    axios.post(`${url}/users/endorseskill?id=${userId}`,
-        QS.stringify({ skillName, endorserId }),
-        { headers: {'Content-Type': 'application/x-www-form-urlencoded'} })
+    axios.put(encodeURI(`${url}/users/skills?id=${userId}&skillId=${skillId}&endorserId=${endorserId}`))
       .then(res => {
         toast.success('مهارت با موفقیت تأیید شد')
         dispatch(fetchUser(userId))
       })
       .catch(err => {
-        toast.success('تأیید مهارت با خطا مواجه شد')
+        toast.error('تأیید مهارت با خطا مواجه شد')
       })
   }
 }
