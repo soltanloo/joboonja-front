@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import UserBrief from './UserBrief';
-import { fetchUsers } from '../actions/user_actions';
+import { fetchUsers, fetchUsersByQuery } from '../actions/user_actions';
 import { Link } from 'react-router-dom';
 import UserSearch from './UserSearch';
 
@@ -15,7 +15,7 @@ export class UsersList extends Component {
   render() {
     return (
       <div className="col-lg-3 col-md-5 col-12" id="profiles-list">
-        <UserSearch />
+        <UserSearch doSearch={(query) => this.props.fetchUsersByQuery(query)} />
         {this.props.users && this.props.users.map(user => 
           <Link key={user.id} to={`/users/${user.id}`}>
             <UserBrief key={user.id} user={user} />
@@ -42,6 +42,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = {
   fetchUsers,
+  fetchUsersByQuery,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(UsersList)

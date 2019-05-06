@@ -7,9 +7,18 @@ import { Link } from 'react-router-dom';
 
 export class ProjectsList extends Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      page: 1,
+      size: 3,
+    };
+  }
+
   componentDidMount() {
     this.props.fetchProjects();
   }
+
 
   render() {
     return (
@@ -19,6 +28,11 @@ export class ProjectsList extends Component {
             <ProjectBrief project={project} />
           </Link>
         )}
+        <button
+          onClick={() => this.setState({size: this.state.size + 3},
+            () => this.props.fetchProjects(this.state.page, this.state.size)
+          )}
+          type="button" class="btn btn-light w-100">نمایش بیشتر</button>
       </div>
     )
   }

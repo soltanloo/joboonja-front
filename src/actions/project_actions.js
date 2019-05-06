@@ -5,9 +5,21 @@ const url = "http://localhost:8000"
 const FETCH_PROJECTS = "FETCH_PROJECTS"
 const FETCH_PROJECT = "FETCH_PROJECT"
 
-export function fetchProjects() {
+export function fetchProjects(page = 1, size = 3) {
   return dispatch => {
-    axios.get(`${url}/projects`)
+    axios.get(`${url}/projects?page=${page}&size=${size}`)
+      .then(res => {
+        dispatch({
+          type: FETCH_PROJECTS,
+          projects: res.data
+        })
+      })
+  }
+}
+
+export function fetchProjectsByQuery(query = '', page = 1, size = 10) {
+  return dispatch => {
+    axios.get(`${url}/projects?query=${query}`)
       .then(res => {
         dispatch({
           type: FETCH_PROJECTS,

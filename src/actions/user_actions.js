@@ -17,6 +17,18 @@ export function fetchUsers() {
   }
 }
 
+export function fetchUsersByQuery(query = '') {
+  return dispatch => {
+    axios.get(`${url}/users?query=${query}`)
+      .then(res => {
+        dispatch({
+          type: FETCH_USERS,
+          users: res.data
+        })
+      })
+  }
+}
+
 export function fetchUser(id) {
   return dispatch => {
     axios.get(`${url}/users?id=${id}`)

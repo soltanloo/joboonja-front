@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import ProjectsList from './ProjectsList';
 import UsersList from './UsersList';
 import ProjectSearch from './ProjectSearch';
+import { connect } from 'react-redux'
+import { fetchProjects } from '../actions/project_actions';
 
 export default class HomePage extends Component {
 
@@ -21,7 +23,9 @@ export default class HomePage extends Component {
               </div>
               <div className={"row justify-content-center mt-3"}>
                 <div className={"col-md-7"} id="home-search-bar">
-                  <ProjectSearch />
+                  <ProjectSearch
+                   
+                  />
                 </div>
               </div>
             </div>
