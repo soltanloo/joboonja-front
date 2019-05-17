@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
@@ -7,6 +8,20 @@ import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 import reducers from './reducers';
+import { toast } from 'react-toastify';
+
+axios.interceptors.response.use(undefined, function (error) {
+  if(error.response.status === 401) {
+    localStorage.removeItem("authToken")
+    toast.warn("لطفاً ابتدا وارد حساب کاربری خود شوید");
+    return Promise.reject(error);
+  }
+  if(error.response.status === 403) {
+    localStorage.removeItem("authToken")
+    toast.warn("لطفاً مجدداً وارد حساب کاربری خود شوید");
+    return Promise.reject(error);
+  }
+});
 
 const createStoreWithMiddleware = composeWithDevTools(applyMiddleware(thunk))(createStore);
 

@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import { Field, reduxForm } from 'redux-form'
 import { toast } from 'react-toastify';
+import { connect } from 'react-redux';
+import { signup } from '../actions/auth_actions';
+import { Redirect } from 'react-router-dom';
 
 class RegisterForm extends Component {
 
@@ -21,10 +24,13 @@ class RegisterForm extends Component {
   }
 
   onSubmit(values) {
-		toast.info('هنوز بک‌اند نداره :(')
-	}
+    this.props.signup(values);
+  }
 
   render() {
+    if(localStorage.authToken) {
+      return <Redirect to='/' />;
+    }
     const { handleSubmit, submitting } = this.props;
     return (
         <div className={"container"} id="register-form-container">
@@ -34,8 +40,8 @@ class RegisterForm extends Component {
               <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
                 <div className={"form-row mb-2"}>
                   <Field name="firstName" required type="text" id="first-name" label="نام" component={this.renderField} />
-                  <Field name="lastName" type="text" id="last-name" label="نام خانوادگی" component={this.renderField} />
-                  <Field name="jobTitle" type="text" id="job-title" label="شغل" component={this.renderField} />
+                  <Field format={(value) => (value === null ? '' : value)} name="lastName" type="text" id="last-name" label="نام خانوادگی" component={this.renderField} />
+                  <Field format={(value) => (value === null ? '' : value)} name="jobTitle" type="text" id="job-title" label="شغل" component={this.renderField} />
                 </div>
                 <div className={"form-row mb-2"}>
                   <Field name="username" required type="text" id="username" label="نام کاربری" component={this.renderField} />
@@ -45,10 +51,10 @@ class RegisterForm extends Component {
                   <Field name="passwordRepeat" required type="password" id="password-repeat" label="تکرار گذرواژه" component={this.renderField} />
                 </div>
                 <div className={"form-row mb-2"}>
-                  <Field name="pictureURL" type="text" id="picture-url" label="لینک تصویر پروفایل" component={this.renderField} />
+                  <Field format={(value) => (value === null ? '' : value)} name="pictureURL" type="text" id="picture-url" label="لینک تصویر پروفایل" component={this.renderField} />
                 </div>
                 <div className={"form-row mb-2"}>
-                  <Field name="bio" id="bio" rows="3" label="درباره" component={this.renderTextarea} />
+                  <Field format={(value) => (value === null ? '' : value)} name="bio" id="bio" rows="3" label="درباره" component={this.renderTextarea} />
                 </div>
                 <div className={"form-row mb-2 justify-content-center"}>
                   <button type="submit" disabled={submitting} className={"btn submitBtn"}>ثبت مشخصات</button>
@@ -83,7 +89,14 @@ const validate = values => {
   return errors
 }
 
+
+function mapStateToProps({ auth }) {
+	return {auth};
+}
+
 export default reduxForm({
-  form: 'registerForm',
-  validate,
-})(RegisterForm)
+    form: 'registerForm',
+     validate
+  })(
+    connect(mapStateToProps, { signup })(RegisterForm)
+  );

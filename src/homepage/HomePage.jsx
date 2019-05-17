@@ -4,10 +4,14 @@ import UsersList from './UsersList';
 import ProjectSearch from './ProjectSearch';
 import { connect } from 'react-redux'
 import { fetchProjects } from '../actions/project_actions';
+import { Redirect } from 'react-router-dom';
 
 export default class HomePage extends Component {
 
   render() {
+    if(!localStorage.authToken) {
+			return <Redirect to='/login' />;
+    }
     return (
       <main>
         <div className={"container-fluid"}>

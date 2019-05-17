@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import { Field, reduxForm } from 'redux-form';
+import { Redirect, Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { login } from '../actions/auth_actions';
 import { toast } from 'react-toastify';
 
 class LoginForm extends Component {
@@ -12,10 +15,15 @@ class LoginForm extends Component {
   )
 
   onSubmit(values) {
-		toast.info('هنوز بک‌اند نداره :(')
+		this.props.login(values, () => {
+      this.props.history.push("/");
+    });
 	}
 
   render() {
+    if(this.props.auth.user) {
+			return <Redirect to='/' />;
+		}
     const { handleSubmit, submitting } = this.props;
     return (
         <div className={"container"} id="login-form-container">
@@ -29,8 +37,13 @@ class LoginForm extends Component {
                   <div className={"form-row mb-2"}>
                     <Field name="password" required type="password" id="password" label="گذرواژه" component={this.renderField} />
                   </div>
+                  <div>
+                    {this.props.auth.errorMessage}
+                  </div>
                   <div className={"form-row mb-2 justify-content-center"}>
-                    <button type="submit" disabled={submitting} className={"btn submitBtn"}>ثبت مشخصات</button>
+                    <button type="submit" disabled={this.props.auth.isAuthenticating} className={"btn submitBtn"}>
+                      {this.props.auth.isAuthenticating ? "در حال ورود" : "ورود"}
+                    </button>
                   </div>
                 </form>
             </div>
@@ -53,7 +66,13 @@ const validate = values => {
   return errors
 }
 
+function mapStateToProps({ auth }, ownProps) {
+	return {auth};
+}
+
 export default reduxForm({
-  form: 'loginForm',
-  validate,
-})(LoginForm)
+	form: 'loginForm',
+	validate
+  })(
+	connect(mapStateToProps, { login })(LoginForm)
+);
