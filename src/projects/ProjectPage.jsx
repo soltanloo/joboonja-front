@@ -20,7 +20,7 @@ export class ProjectPage extends Component {
     if (!this.props.curr) {
       return <p>در حال بارگذاری...</p>
     }
-    const { project, hasBidden } = this.props.curr;
+    const { project, hasBidden, winner } = this.props.curr;
     const pastDeadline = isPastDeadline(project.deadline);
     return (
       <main>
@@ -52,9 +52,9 @@ export class ProjectPage extends Component {
                   <span>بودجه: {persianJs(project.budget).englishNumber().toString()} تومان</span></strong>
                 </div>
                 {pastDeadline && <div className={"col-sm-12 text-success"}>
-                {project.winner && <div><i className={"flaticon-correct-symbol ml-1"}></i>
-                  <strong><Link to={`/users/${project.winner.id}`}>
-                    <span>برنده: {project.winner.firstName + " " + project.winner.lastName}</span>
+                {winner != null && <div><i className={"flaticon-correct-symbol ml-1"}></i>
+                  <strong><Link to={`/users/${winner.id}`}>
+                    <span>برنده: {winner.firstName + " " + winner.lastName}</span>
                   </Link></strong></div>}
                 </div>}
               </div>
