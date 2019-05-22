@@ -43,7 +43,7 @@ export function signup(data) {
   return dispatch => {
     axios.post(`${url}/auth/register`, QS.stringify(data)).then(() => {
       toast.success('ثبت‌نام با موفقیت انجام شد')
-      dispatch(login({email: data.email, password: data.password}));
+      dispatch(login({username: data.username, password: data.password}));
     }).catch(error => {
       toast.error('ثبت‌نام با خطا مواجه شد')
     })
