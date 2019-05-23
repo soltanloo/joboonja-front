@@ -74,7 +74,7 @@ export function removeSkill(userId, skillId) {
 
 export function endorseSkill(userId, endorserId, skillId) {
   return dispatch => {
-    axios.put(encodeURI(`${url}/users/skills?id=${userId}&skillId=${skillId}&endorserId=${endorserId}`), getDefaultConfig())
+    axios.put(encodeURI(`${url}/users/skills?id=${userId}&skillId=${skillId}&endorserId=${endorserId}`), {}, getDefaultConfig())
       .then(res => {
         toast.success('مهارت با موفقیت تأیید شد')
         dispatch(fetchUser(userId))

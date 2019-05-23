@@ -15,7 +15,7 @@ export class OtherUserSkills extends Component {
       } else {
         return (<div key={skill.id} className={"col-xs-auto compact-card skill-endorsable"}>
           <span className={"skill-name"}>{skill.name} </span>
-          <span className={"skill-point"} onClick={() => this.props.endorseSkill(this.props.userId, 1, skill.id)}><span className={"skill-point-text"}>{skill.point}</span></span>
+          <span className={"skill-point"} onClick={() => this.props.endorseSkill(this.props.userId, this.props.myId, skill.id)}><span className={"skill-point-text"}>{skill.point}</span></span>
         </div>)
       }
     })
@@ -39,6 +39,7 @@ OtherUserSkills.propTypes = {
 const mapStateToProps = (state) => ({
   skills: state.currentUser.user.skills,
   skillsEndorsed: state.currentUser.skillsEndorsed,
+  myId: state.auth.user,
 })
 
 const mapDispatchToProps = {
