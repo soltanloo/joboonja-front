@@ -2,7 +2,7 @@ import axios from 'axios';
 import QS from 'querystring';
 import { getDefaultConfig, getFormConfig } from './config';
 import { toast } from 'react-toastify';
-const url = "http://localhost:8000"
+const url = "http://localhost:8000/joboonja"
 const FETCH_PROJECTS = "FETCH_PROJECTS"
 const FETCH_PROJECT = "FETCH_PROJECT"
 

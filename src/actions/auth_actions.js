@@ -4,7 +4,7 @@ import jwt_decode from 'jwt-decode';
 import { toast } from 'react-toastify';
 import { timeout } from 'q';
 
-const url = "http://localhost:8000"
+const url = "http://localhost:8000/joboonja"
 const LOGIN_REQUEST = "LOGIN_REQUEST";
 const LOGIN_FAILURE = "LOGIN_FAILURE";
 const LOGIN_SUCCESS = "LOGIN_SUCCESS";
