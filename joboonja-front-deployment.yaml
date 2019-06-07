@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: joboonja-front-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: joboonja-front
+  template:
+    metadata:
+      labels:
+        app: joboonja-front
+    spec:
+      containers:
+        - image: soltanloo/joboonja-front:latest
+          imagePullPolicy: Always
+          name: joboonja-front
+          ports:
+            - containerPort: 80
+          resources:
+              limits:
+                memory: "200Mi"
+                cpu: "200m"
+              requests:
+                memory: "200Mi"
+                cpu: "200m"

@@ -2,7 +2,7 @@ import axios from 'axios';
 import QS from 'querystring';
 import { toast } from 'react-toastify';
 import { getDefaultConfig, getFormConfig } from './config';
-const url = "http://localhost:8000/joboonja"
+const url = "http://185.166.107.169:32090/joboonja"
 const FETCH_USERS = "FETCH_USERS"
 const FETCH_USER = "FETCH_USER"
 
